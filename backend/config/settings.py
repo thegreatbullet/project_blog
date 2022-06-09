@@ -47,8 +47,12 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         # "rest_framework.permissions.AllowAny", allow any one to view api data
-        "rest_framework.permissions.IsAuthenticated", #only allow authenticated users to view api data
-    ]
+        "rest_framework.permissions.IsAuthenticated",  # only allow authenticated users to view api data
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
+    ],
 }
 
 MIDDLEWARE = [
