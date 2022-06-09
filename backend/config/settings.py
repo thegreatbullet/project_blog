@@ -37,14 +37,24 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",  # new
     # local
     "todos",
     # 3rd party
     "rest_framework",
     "corsheaders",
     "rest_framework.authtoken",
+    # User Registration
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
     "dj_rest_auth",
+    "dj_rest_auth.registration",
 ]
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+SITE_ID = 1
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
