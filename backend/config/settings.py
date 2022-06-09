@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # 3rd party
     "rest_framework",
     "corsheaders",
+    "rest_framework.authtoken",
 ]
 
 REST_FRAMEWORK = {
@@ -50,8 +51,8 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",  # only allow authenticated users to view api data
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",  # For admin to login to api
+        "rest_framework.authentication.TokenAuthentication",  # Add session id in http headers
     ],
 }
 
